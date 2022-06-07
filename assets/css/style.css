@@ -1,0 +1,707 @@
+
+:root {
+    --youtube-red: #0011fe;
+}
+
+
+/* Page styles */
+.wrapper > main, #pg-nav {
+    width: 70em;
+    margin: 0 auto;
+}
+
+
+        
+p {margin-bottom: 10px;}
+    
+p:last-child {margin: 0;}
+                
+
+.einleitung {                               /* ist div grid Einteilung für die Kontakttaden auf der index.html Seite */
+    display: grid;
+    grid-template-areas: ".";
+    background-color: #d1cfcc;
+    min-height: 35vw;
+    width: 100%;
+    text-align: center;
+    padding: 20px 10px;
+}
+
+.profilbild img {
+    width: 40%;
+    height:auto;
+    
+}
+
+#beschreibung > ul li {                     /* nur die ul li's in Beschreibung wird hiermit gemeint aus index.html */
+    color: black;
+    font-weight: bold;
+}
+
+
+
+
+.ueberschrift1 {                            /* große Überschrift */
+    font-size: 2rem;
+    font-weight: bold;
+    text-align: center;
+}
+
+.ueberschrift2 {                            /* mittlere Überschrift */
+    font-size: 1.5rem;
+    font-weight: bold;    
+}
+
+.ImpressumÜberschriften {
+    font-size: 1.5 rem;
+    font-weight: bold;
+    text-align: center;
+}
+
+.Impressum {
+    text-align: center;
+}
+.tabSchrift {                               /* Schrifteigenschaften für die Schrift in den Tabbed Links */
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-align: center;
+    padding: 10px 0;
+    
+        
+}
+#Insta > a, a:hover, a:active,a:visited {
+    color: blue;
+}
+#Yt > a, a:hover, a:active,a:visited {
+    color: blue;
+}
+#Wa > a, a:hover, a:active,a:visited {
+    color: blue;
+}
+#Hs > a, a:hover, a:active,a:visited {
+    color: blue;
+}
+
+.hyperlink {
+    padding: 1.5rem 0;
+    text-align: center;
+}
+
+.socialLogo {                                       /* betrifft die Bilder in den Tabbed Links von den Social Media Logos */
+    width: 10%;
+    
+    margin-left: 45%;
+    
+    
+    
+}
+
+
+
+
+
+
+
+
+#pg-nav {text-align: center;}
+
+#pg-nav > ul {                          /* für alle Menü Spalten, sonst untereinander */
+    display:grid;
+    grid-template-areas: ". . . .";
+    grid-gap: 30px;
+    
+}
+
+#pg-nav > ul li a, .sub-list li a {
+    color: #fafafa;
+    font-size: 1,5rem;
+   
+    
+}
+
+.menuOhneBild {
+    padding-top: 1vw;
+}
+
+.sublistOhneBild {
+    padding: 1vw 0;
+}
+
+
+#pg-nav > ul li, .sub-list li {
+    
+}
+
+.sub-list {                         /* weitere Liste wenn man über einen Menüpunkt hovert */
+    background-color: #d1cfcc;
+    display: none;
+    position: absolute;
+    margin-top: 20px;
+    width: 100%;
+    z-index: 1000;
+}
+
+.dropdown {
+    position: relative;
+    padding-top: 1vw;
+}
+
+.dropdown:hover > .sub-list {
+    display: block;
+
+}
+
+
+
+
+
+/* Hamburger from Tut 9 SEM 1 */
+#hamburger {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    position: relative;
+    overflow: visible;
+}
+
+#hamburger .hamburger-inner, #hamburger .hamburger-inner::after,
+#hamburger .hamburger-inner::before {
+    background-color: #fafafa;
+    border-radius: 4px;
+    width: inherit;
+    height: 4px;
+    position: absolute;
+}
+
+#hamburger .hamburger-inner::after, #hamburger .hamburger-inner::before {
+    display: block;
+    content: "";
+}
+
+#hamburger .hamburger-inner::before {top: -10px;}
+#hamburger .hamburger-inner::after {bottom: -10px;}
+
+
+#hamburger.active .hamburger-inner {transform: rotate(45deg);}
+#hamburger.active .hamburger-inner::before {
+    top: 0;
+    opacity: 0;
+}
+#hamburger.active .hamburger-inner::after {
+    bottom: 0;
+    transform: rotate(-90deg);
+}
+
+
+
+/* Portfolio */
+.portfolio {
+    display: grid;
+    grid-template-areas: ". . .";
+    grid-gap: 50px;
+}
+
+.portfolioBilder {                          /* div grid Einteilung für die lazy.html Bilder */
+    display: grid;
+    grid-template-areas: "a b"
+                         "c b"
+                         "d b"
+                         "d e"
+                         "d f"
+                         "g h";
+    grid-gap: 50px;
+}
+
+.footerGrid {                               /* grid areas für den Footer */
+    display: grid;
+    grid-template-areas: ". .";
+    grid-gap: 60px;
+}
+
+.footerLinks {                              /* Texteinstellungen für den linken Bereich vom Footer */
+    text-align: left;
+    font-size: 0.5 rem;
+}
+.footerRechts {                             /* Texteinstellungen für den rechten Bereich vom Footer */
+    text-align: right;
+    font-size: 0.5 rem;
+}
+
+.tile {
+    background-color: #d1cfcc;
+    min-height: 15vw;
+}
+
+.bild1 {                                    /* Bennenung der Bilder passend zu den Buchstaben, damit sie durch .portfolioBilder der Reihenfolge angepasst werden können */
+    grid-area: a;
+    
+    
+}
+.bild2 {
+    grid-area: b;
+    
+    
+}
+.bild3 {
+    grid-area: c;
+    
+    
+}
+.bild4 {
+    grid-area: d;
+    ;
+    
+}
+.bild5 {
+    grid-area: e;
+    
+    ;
+}
+.bild6 {
+    grid-area: f;
+}
+.bild7 {
+    grid-area: g;
+}
+.bild8 {
+    grid-area: h;
+}
+
+
+
+.tileKontakt {                              /* Kästchen Einstellungen für die Kontaktdaten in der maps.html */
+    background-color: #d1cfcc;
+    min-height: 10vw;
+    padding-bottom: 3rem;
+}
+
+
+
+
+
+.text {padding: 15px;}
+
+.pic img {
+    width: 100%;
+    height: auto;
+}
+
+/* responsive Video */
+
+.video-container {
+    position: relative;
+    padding-bottom: 56.25%;
+    padding-top: 0;
+    height: 0;
+    overflow: hidden;
+    margin-top: 20px;
+}
+
+.video-container iframe,
+.video-container object,
+.video-container embed,
+.video-container video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.video-container + .video-container {margin-top: 60px;}         /* wenn es ein zweites Video gibt */
+
+
+/* Video controls */
+.video-controls {
+    position: absolute;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    align-items: center;
+    bottom: 0;
+    left: 0;
+    transition: all 0.2s ease;
+    background-image: linear-gradient(to bottom, rgba(0,0,0,0.3), rgba(0,0,0,0.5));
+    padding: 10px 20px;
+    color: #fafafa;
+}
+
+.video-controls.hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.play {
+    color: #fafafa;
+    cursor: pointer;
+    position: relative;
+    font-size: 20px;
+    padding: 3px;
+    border: none;                           /* ist ein Button, soll aber keine Ränder anzeigen */
+    outline: none;
+    background-color: transparent;
+}
+
+.play > span {
+    font-size: 14px;
+    display: block;
+    margin-top: 3px;
+    margin-bottom: 4px;
+}
+
+.video-progress {
+    position: relative;
+    height: 8.4px;
+    width: 80%;
+}
+
+.progress-bar {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border-radius: 2px;
+    width: 100%;
+    height: 8.4px;
+    pointer-events: none;
+    position: absolute;
+    top: 0;
+
+}
+
+        .progress-bar::-webkit-progress-bar {
+            background-color: #474545;
+            border-radius: 2px;
+        }
+
+        .progress-bar::-webkit-progress-value {
+            background: var(--youtube-red);
+            border-radius: 2px;
+        }
+
+        .progress-bar::-moz-progress-bar {
+            background: var(--youtube-red);
+            border: 1px solid var(--youtube-red);
+        }
+
+.seek {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    cursor: pointer;
+    margin: 0;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    height: 8.4px;
+    background: transparent;
+}        
+
+        .seek:focus {
+            outline: none;
+        }
+
+        .seek::-webkit-slider-runnable-track {
+            width: 100%;
+            cursor: pointer;
+            border-radius: 1.3px;
+            -webkit-appearance: none;
+            transition: all 0.4s ease;
+        }
+
+        .seek::-webkit-slider-thumb {
+            height: 16px;
+            width: 16px;
+            border-radius: 16px;
+            background: var(--youtube-red);
+            cursor: pointer;
+            -webkit-appearance: none;
+            margin-left: -1px;
+        }
+
+        .seek:focus::-webkit-slider-runnable-track {
+            background: transparent;
+        }
+
+
+            .seek::-moz-range-track {
+                width: 100%;
+                height: 8.4px;
+                cursor: pointer;
+                border: 1px solid transparent;
+                background: transparent;
+                border-radius: 1.3px;
+            }
+
+            .seek::-moz-range-thumb {
+                height: 14px;
+                width: 14px;
+                border-radius: 50px;
+                border: 1px solid var(--youtube-red);
+                background: var(--youtube-red);
+                cursor: pointer;
+                margin-top: 5px;
+            }
+
+
+            .seek:focus::-moz-range-track {
+                outline: none;
+            }
+
+            .seek:hover+.seek-tooltip {
+                display: block;
+            }
+
+    .seek-tooltip {
+        display: none;
+        position: absolute;
+        top: -60px;
+        margin-left: -20px;
+        font-size: 12px;
+        padding: 3px;
+        content: attr(data-title);
+        font-weight: bold;
+        background-color: rgba(0,0,0,0.6);
+        z-index: 10;
+    }        
+
+
+
+
+
+    
+
+
+
+
+  /* hier beginnt die Tabelle Links */  
+.tab {
+    overflow: hidden;
+    border: 1px solid #CCC;
+    background-color: #F1F1F1;
+}
+
+    .tab button {
+        background-color: inherit;      /* inherit heißt, es übernimmt die Farbe von davor */
+        float: left;
+        border: none;
+        outline: none;
+        cursor: pointer;
+        padding: 14px 16px;
+        transition: 0.3s;
+    }
+
+        .tab button:hover {background-color: #DDD;}
+        .tab button.active {background-color: #CCC;}
+
+.tabcontent {
+    display: none;
+    min-height: 6vw;
+    padding: 6px 12px;
+    border: 1px solid #CCC;
+    border-top: none;
+}      
+
+    .tabcontent.active {display: block;}
+
+
+    #mapdiv {height: 20vw;}
+
+    .divmap {
+        
+        align-content: center;
+        width: 70%;
+        margin-left: 15%;
+        
+        
+    }    
+
+    .map {
+        max-height: 40rem;
+    }
+
+    .GoogleMap {
+        align-content: center;
+        width: 70%; 
+        height: 40rem; 
+        border:0; 
+        margin-left: 15%;
+        allowfullscreen: "";
+        loading: "lazy";
+        referrerpolicy: "no-referrer-when-downgrade";
+    }
+
+#kontaktDaten > ul li {
+    text-align: center;
+    color: #000;
+    font-size: 1.2vw;
+    font-weight: 700;
+    
+    padding-top: 2rem;
+}  
+
+.TableZeiten {
+    width: 80%;
+    align-content: center;
+    border: 1px solid;
+    margin-left: 10%;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.TrZeiten:nth-child(even) {
+    background-color: #d1cfcc;
+}
+
+.TrZeiten {
+    height: 2rem;
+}
+
+.TdZeitenTage{
+    text-align: right;
+    font-weight: bold;
+    width: 50%;
+    padding-right: 2%;   
+}
+
+.TdZeitenUhrzeit{
+    text-align: left;
+    width: 50%;
+    padding-left: 2%;   
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Tablet */
+@media(max-width: 1280px) { /* Changed from 1075px to prevent overflow of portfolio grid */
+    /* SHARED STYLES */
+    .wrapper > main, #pg-nav {width: calc(100% - 60px);}
+
+    /* HEADER */
+    #pg-nav > ul {
+        display:grid;
+        grid-template-areas: ". . .";         /* für Tablet geringere grid gap */
+        grid-gap: 5px;
+        
+    }
+
+    /* MAIN */
+    .portfolio {
+        grid-template-areas: ". .";
+        grid-gap: 30px;
+    }
+
+    .portfolioBilder {
+        
+        grid-gap: 20px;
+    }
+
+    .tile {min-height: 45vw;}
+    .einleitung {min-height: 45vw;}
+
+
+    #kontaktDaten > ul li {
+
+        
+        font-size: 1.8vw;
+        
+        
+    }    
+    #mapdiv {height: 65vw;}
+    .GoogleMap {height: 50vw;}
+
+    
+}
+
+
+/*Handy*/
+@media(max-width: 850px) {
+
+    /* HEADER */
+    .wrapper > header {padding: 20px;}
+    #hamburger {display: flex;}             /* nur beim handy wird ein hamburger angezeigt, sonst nicht */
+    #pg-nav {width: auto;}                  /*also immer mittig */
+    #pg-nav.active > ul {display: block;}
+    #pg-nav > ul {
+        display:grid;
+        grid-template-areas: ".";           /* beim Handy nur 1 Menü pro Zeile */
+        grid-gap: 30px;
+        display: none;
+        
+    }
+
+    .sub-list {position: relative;}
+
+    
+    /* MAIN */
+    .wrapper > main {width: calc(100% - 40px);}
+
+    .portfolio {
+        grid-template-areas: ".";
+        grid-gap: 20px;
+    }
+
+    .portfolioBilder {                                  /* wenn Bilder von der lazy.html Seite im Handy Format, dann andere Anordnung */
+        grid-template-areas: "a"
+                             "b"
+                             "c"
+                             "d"
+                             "e"
+                             "f"
+                             "g"
+                             "h";
+        grid-gap: 20px;
+    }
+
+    .tile {min-height: 100vw;}
+    .einleitung {min-height: 100vw;}
+    .profilbild img {
+        width: 80%;
+        height:auto;
+        
+    }
+
+    #kontaktDaten > ul li {
+        font-size: 3vw;  
+    } 
+    #mapdiv {height: 100vw;}
+    .GoogleMap {height: 80vw; width: 90%; margin-left: 5%;}                 /* width & margin auf beiden Seiten muss 100 ergeben */
+
+    .tabcontent {min-height: 20vw;}
+    .socialLogo {min-width: 20%;
+                margin-left: 40%;}
+
+}
+
+
+/* For demonstration purposes only */
+.wrapper > header h1, .wrapper > main h1, .wrapper > footer h1 {text-align: center;}
+.wrapper > header {margin-bottom: 30px;}
+.wrapper > footer {margin-top: 30px; padding: 20px;}
+
+
+.wrapper > header, .wrapper > footer {
+    background-color: #333;
+    color: #fafafa;
+}
+
+#pg-nav > ul li:hover {
+    background-color: #32a9d8;
+    color: #333;
+}
+
+#pg-nav > ul li a:hover {
+    color: #333;
+}

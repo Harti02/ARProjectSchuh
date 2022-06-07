@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../assets/css/reset.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript" src="../assets/js/jquery.lazy.min.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div class="wrapper">
+
+        <header>
+            <div id="hamburger" onclick="toggleNav(this)">
+                <div class="hamburger-inner"></div>
+            </div>
+            <nav id="pg-nav">
+                <ul>
+                    <li><a href="../index.html">Hauptmenü</a></li>
+                    <li class="dropdown"><a href="#">Referenzen</a>
+                        <ul class="sub-list">
+                            <li><a href="./video.html">Videos</a></li>
+                            <li><a href="./lazy.html">Fotos</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="./maps.html">Kontakt</a></li>
+                </ul>
+
+
+            </nav>
+        </header>
+
+        <main>
+            <br>
+            
+            <div>
+            <p class="ueberschrift1">Mein Foto-Portfolio</p>                                <!-- Überschrift der Seite -->
+            </div>
+            <br>
+            <br>
+            <br>
+            <br>
+            
+            <section class="portfolioBilder">                                               <!-- div grid für die einzelnen Foto-Kästchen -->       
+
+                        <div class="bild1">                                                 <!-- Fotokästchen für Bild1 -->
+                            <div class="pic">                                               
+                                <img class="lazy" data-src="../images/flugplatz_v1.jpg">    <!-- Bild mit lazyloading Eigenschaft und data-src statt src -->      
+                            </div>
+                            
+                        </div>
+
+                        <div class="bild2">                                                 <!--wiederholt sich für die anderen Bilder wie in Bild1 -->
+                            <div class="pic">
+                                <img class="lazy" data-src="../images/parkplatz_v1_erweitert_18_9.png">
+                            </div>
+                            
+                        </div>
+
+                        <div class="bild3">
+                            <div class="pic">
+                                <img class="lazy" data-src="../images/kitty1_jpg.jpg">
+                            </div>
+                            
+                        </div>
+
+                        <div class="bild4">
+                            <div class="pic">
+                                <img class="lazy" data-src="../images/flugplatz_v2.jpg">
+                            </div>
+                            
+                        </div>
+
+                        <div class="bild5">
+                            <div class="pic">
+                                <img class="lazy" data-src="../images/Aufgabe2Bild2.jpg">
+                            </div>
+                            
+                        </div>
+
+                        <div class="bild6">
+                            <div class="pic">
+                                <img class="lazy" data-src="../images/Aufgabe2Bild4.jpg">
+                            </div>
+                            
+                        </div>
+                        <div class="bild7">
+                            <div class="pic">
+                                <img class="lazy" data-src="../images/Caro_1.JPG">
+                            </div>
+                            
+                        </div>
+
+                        <div class="bild8">
+                            <div class="pic">
+                                <img class="lazy" data-src="../images/caro_2.JPG">
+                            </div>
+                            
+                        </div>
+
+    
+
+            </section> <!-- div grid Ende -->
+
+            <br>
+            <br>
+            <br>
+            <br>
+        </main>
+
+        <footer>
+            <section class="footerGrid">                                    <!-- Footer identisch zum Footer in allen anderen Seiten -->
+                <div >
+                    <p class="footerLinks"> erstellt von:
+                        <br> Nick Hartmann
+                        <br> m29176
+                    </p>
+                </div>
+                <div >
+                    <p class="footerRechts">Eine Produktion der &copy; HS Harz 2021
+                        <br>Webseite für Design interaktive Oberflächen
+                        <br><a href="./Impressum.html" style="text-decoration: underline; color: white;">Impressum</a>
+                    </p>
+                </div>
+            </section>
+            
+        </footer>
+
+    </div> <!-- .wrapper -->
+
+    <!-- Load JS at the end to improve loading times -->
+    <script src="../assets/js/script.js"></script>
+    <script>
+        $(function() {
+            $('.lazy').Lazy({
+                scrollDirection: 'vertical',
+                effect: 'fadeIn', 
+                effectTime: 3000
+            });
+        });
+    </script>
+</body>
+</html>

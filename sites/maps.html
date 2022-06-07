@@ -1,0 +1,188 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../assets/css/reset.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <title>Document</title>
+</head>
+<body>
+  <div class="wrapper">
+
+      <header>
+          <div id="hamburger" onclick="toggleNav(this)">
+              <div class="hamburger-inner"></div>
+          </div>
+          <nav id="pg-nav">
+            <ul>
+              <li><a href="../index.html">Hauptmenü</a></li>
+              <li class="dropdown">
+                <a href="#">Referenzen</a>
+                <ul class="sub-list">
+                  <li><a href="./video.html">Videos</a></li>
+                  <li><a href="./lazy.html">Fotos</a></li>
+                </ul>
+              </li>
+              <li><a href="./maps.html">Kontakt</a></li>
+            </ul>
+          </nav>
+      </header>
+
+      <main>
+        <br>
+        <br>
+        <h2 class="ueberschrift1">Wo ich überall zu finden bin :</h2>
+        <br>
+        <br>
+        <br>
+        <br>
+        <div class="tileKontakt">                                         <!-- Kästchen für meine Kontaktdaten -->
+          <div id="kontaktDaten">                                         <!-- id, damit auf die Listen da drin zugegriffen werden kann ohne andere Listen zu ändern in der style.css -->
+            <ul>
+              <li>Social Media (Instagram, Youtube, etc.)</li>
+              <li>Email: nick-hartmann@freenet.de</li>
+              <li>Tel.Nr: 0152 22119189</li>
+              <li>Am Finkenborn 3 App 203, 38855 Wernigerode</li>
+            </ul>
+          </div>
+        </div>
+
+
+        <br>
+        <br>
+        <br>
+        <div class="divmap">                                              <!-- div für die Map, entspricht den Einstellungen aus den Übungen -->
+
+          <div class="map" id="mapdiv"></div>
+        </div>  
+
+
+
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+
+
+        <article>                                                         <!-- article für die Tabbed Links -->
+          <h1 style="text-align: left;">Social Media Links</h1>           <!-- Überschrift -->
+          <br>
+          <br>
+
+          <div class="tab">                                               <!-- entspricht den Übungen, nur eigene Eigenschaften geändert -->
+              <button class="tablinks active" onclick="openTab(event, 'Insta')">Instagram</button>
+              <button class="tablinks" onclick="openTab(event, 'Yt')">Youtube</button>
+              <button class="tablinks" onclick="openTab(event, 'Wa')">Whatsapp</button>
+              <button class="tablinks" onclick="openTab(event, 'Hs')">HS Harz Profil</button>
+          </div>
+
+                                  
+          <div id='Insta' class="tabcontent active">  <!-- active, damit dieses Fenster zum Anfang direkt geöffnet ist  --> 
+              <h3 class="tabSchrift">Instagram</h3>
+              
+              <img class="socialLogo" src="../assets/img/insta logo.png">                                 <!-- App Icon der entsprechenden Social Media App -->
+              <p class="hyperlink"><a href="https://www.instagram.com/nick.htn/">Hier klicken</a></p>     <!-- Hyperlink, der direkt zur Instagram Seite weiterleitet -->
+          </div>
+
+          <div id='Yt' class="tabcontent">
+              <h3 class="tabSchrift">Youtube</h3>
+              <img class="socialLogo" src="../assets/img/youtube logo.png">                               <!-- wiederholt sich wie bei Instagram-->
+              <p class="hyperlink"><a href="https://www.youtube.com/channel/UCE5pNQB_zfayS87OaHHdCyw">Hier klicken</a></p>
+          </div>
+
+          <div id='Wa' class="tabcontent">
+              <h3 class="tabSchrift">Whatsapp</h3>
+              <img class="socialLogo" src="../assets/img/whatsapp logo.png">
+              <p class="hyperlink">meine Nummer: 01522 2119189</p>                                      <!-- statt einem Hyperlink ist hier nur die Nummer zu sehen -->
+          </div>
+
+          <div id='Hs' class="tabcontent">
+              <h3 class="tabSchrift">StudIP Profil</h3>
+              <img class="socialLogo" src="../assets/img/studip platzhalter.png">
+              <p class="hyperlink"><a href="https://studip.hs-harz.de/studip/dispatch.php/profile?username=u36656">Hier klicken</a></p>
+          </div>
+
+
+
+      </article>
+
+      <br>
+      <br>
+      <br>
+      <br>
+
+
+
+
+
+      </main>
+      <footer>
+        <section class="footerGrid">                                                              <!-- selbe Footereinstellungen wie in index.html-->
+            <div >
+                <p class="footerLinks"> erstellt von:
+                    <br> Nick Hartmann
+                    <br> m29176
+                </p>
+            </div>
+            <div >
+                <p class="footerRechts">Eine Produktion der &copy; HS Harz 2021
+                    <br>Webseite für Design interaktive Oberflächen
+                    <br><a href="./Impressum.html" style="text-decoration: underline; color: white;">Impressum</a>
+                </p>
+            </div>
+        </section>
+        
+    </footer>
+    </div>
+      <script src="../assets/js/script.js"></script>
+        <script src="http://www.openlayers.org/api/OpenLayers.js"></script>                 <!-- JS script für die Map einbinden-->
+        <script>
+          map = new OpenLayers.Map("mapdiv");
+          map.addLayer(new OpenLayers.Layer.OSM());
+
+          var lonLat = new OpenLayers.LonLat( 10.77792992340321, 51.84928045448669 )
+                .transform(
+                  new OpenLayers.Projection("EPSG:4326"), // Transformation aus dem Koordinatensystem WGS 1984
+                  map.getProjectionObject() // in das Koordinatensystem 'Spherical Mercator Projection'
+                );
+
+          var zoom=17;
+
+          var markers = new OpenLayers.Layer.Markers( "Markers" );
+          map.addLayer(markers);
+
+          markers.addMarker(new OpenLayers.Marker(lonLat));
+
+          map.setCenter (lonLat, zoom);
+        </script>
+
+
+                                                                                              <!-- JS script für die Tabbed Links, wie in den Übungen-->
+<script>                                                                             
+  /* wenn button geklickt wird*/
+  function openTab(evt, identifier) {
+      var i, tabcontent, tablinks;
+
+  // Get all elements with class="tabcontent" and hide them
+  tabcontent = document.getElementsByClassName("tabcontent");
+      for (i = 0; i < tabcontent.length; i++) {
+          tabcontent[i].style.display = "none";
+      }
+
+  // Get all elements with class="tablinks" and remove the class "active"
+  tablinks = document.getElementsByClassName("tablinks");
+      for (i = 0; i < tablinks.length; i++) {
+          tablinks[i].className = tablinks[i].className.replace(" active", "");
+       }
+
+   // Show the current tab, and add an "active" class to the button that opened the tab
+   document.getElementById(identifier).style.display = "block";
+  evt.currentTarget.className += " active";
+
+
+  }
+</script>
+</body>
+</html>
